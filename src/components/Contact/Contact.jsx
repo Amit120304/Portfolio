@@ -2,7 +2,8 @@ import React, { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
-
+import dotenv from "dotenv";
+dotenv.config();
 const Contact = () => {
   const form = useRef();
   const [isSent, setIsSent] = useState(false);
@@ -26,39 +27,39 @@ const Contact = () => {
     };
 
     emailjs
-        .send(
-            "service_8hgjf8h",  // Service ID
-            "template_6m27b7s",  // Template ID
-            templateParams,  // Your custom data object
-            "C8yKf2icGx18Wyj6o"   // Public Key
-        )
-        .then(
-            () => {
-              setIsSent(true);
-              form.current.reset();
-              toast.success("Message sent successfully! ✅", {
-                position: "top-right",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                theme: "dark",
-              });
-            },
-            (error) => {
-              console.error("Error sending message:", error);
-              toast.error("Failed to send message. Please try again.", {
-                position: "top-right",
-                autoClose: 3000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                theme: "dark",
-              });
-            }
-        );
+      .send(
+        process.env.SERVICE_ID,
+        process.env.TEMPLATE_ID,
+        templateParams,
+        process.env.PUBLIC_KEY
+      )
+      .then(
+        () => {
+          setIsSent(true);
+          form.current.reset();
+          toast.success("Message sent successfully! ✅", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            theme: "dark",
+          });
+        },
+        (error) => {
+          console.error("Error sending message:", error);
+          toast.error("Failed to send message. Please try again.", {
+            position: "top-right",
+            autoClose: 3000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            theme: "dark",
+          });
+        }
+      );
   };
 
   return (
@@ -113,7 +114,7 @@ const Contact = () => {
             required
             className="w-full p-3 rounded-md bg-[#131025] text-white border border-gray-600 focus:outline-none focus:border-purple-500"
           />
-          
+
           {/* Send Button */}
           <button
             type="submit"
