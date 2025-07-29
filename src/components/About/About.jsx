@@ -39,8 +39,8 @@ const About = () => {
           </h3>
           {/* About Me Paragraph */}
           <p className="text-base sm:text-lg md:text-lg text-gray-400 mb-10 mt-8 leading-relaxed">
-            As a Computer Science undergraduate with hands-on expertise across the full MERN stack and a deep understanding of AI integration, I’ve architected real-time, socket-based games and chat applications, as well as Gen-AI-powered agents and RAG (retrieval-augmented generation) solutions that showcase my ability to marry cutting-edge machine learning with scalable web services.
-            My reputation as a “knight” on LeetCode and a 3-star coder on CodeChef—combined with top-tier JEE Main and Advanced ranks of X and Y, respectively—underscores both my algorithmic prowess and my capacity to tackle complex technical problems under pressure.
+            As a Computer Science undergraduate with hands-on expertise across the full MERN stack and a deep understanding of AI integration, I’ve architected real-time, socket-based games and chat applications, as well as Gen-AI-powered agents and RAG solutions that showcase my ability to marry cutting-edge machine learning with scalable web services.
+            My reputation as a “knight” on LeetCode , a 3-star coder on CodeChef and Pupil on codeforces —combined with top-tier JEE Main and Advanced ranks of 3738 and 8230, respectively—underscores both my algorithmic prowess and my capacity to tackle complex technical problems under pressure.
             I’m a fast-paced learner who thrives on mastering new technologies and approaches, and my relentless curiosity ensures I’m always at the forefront of industry trends.
             I’m ready to hit the ground running and contribute immediately to your team’s success.
           </p>
@@ -57,7 +57,7 @@ const About = () => {
           >
             DOWNLOAD CV
           </a>
-          
+
         </div>
         {/* Right Side */}
         <div className="md:w-1/2 flex justify-center md:justify-end">
